@@ -58,6 +58,34 @@
 
    需要注意，在使用方式2时，实现selectImports方法可以返回空数组但是不能返回null，否则会报空指针异常！
 
-7. 
+7. @FactoryBean 查看demo------>lab-6
+
+8. Bean的生命周期
+
+   bean的简易生命周期：bean的创建------>初始化------>使用-------->销毁，容器管理bean的生命周期，可以指定Bean的初始化方法和销毁方法，在容器的创建时调用我们自定义的初始化和销毁方法。
+
+   一、单实例：
+
+   在容器创建Bean时创建Bean,在Bean创建完毕后调用initMethod，在调用applicationContext.close()时调用destroyMethod销毁bean
+
+   二、多实例:
+
+   在容器创建时不会创建Bean，只有在使用实例是创建Bean,在Bean创建完毕后调用InitMethod，在容器关闭的时候不会调用destroyMethod销毁bean。
+
+   多实例模式下，bean创建完毕后，容器不再进行管理
+
+   Bean的生命周期包含以下：demo---->lab-7-lifecycle
+
+   ```
+   1、指定初始化方法和销毁方法：
+      通过@Bean(initMethod,destroyMethod)指定初始化方法和销毁方法
+   2、通过Bean实现InitializingBean定义初始化逻辑，DisposableBean定义销毁方法逻辑
+   3、通过@PostConstruct定义初始化逻辑，通过@PreDestroy定义销毁方法逻辑
+   4、
+   ```
+
+   
+
+9. 
 
 ​	

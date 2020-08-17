@@ -14,6 +14,8 @@
         <module>lab-3-scope</module>
         <module>lab-4-conditional</module>
         <module>lab-5-import</module>
+        <module>lab-6-factorybean</module>
+        <module>lab-7-lifecycle</module>
     </modules>
 
     <dependencies>
