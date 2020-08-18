@@ -18,6 +18,7 @@
         <module>lab-7-lifecycle</module>
         <module>lab-8-value</module>
         <module>lab-9-automatic-assembly</module>
+        <module>lab-10-profile</module>
     </modules>
 
     <dependencies>
