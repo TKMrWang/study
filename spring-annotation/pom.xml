@@ -16,6 +16,8 @@
         <module>lab-5-import</module>
         <module>lab-6-factorybean</module>
         <module>lab-7-lifecycle</module>
+        <module>lab-8-value</module>
+        <module>lab-9-automatic-assembly</module>
     </modules>
 
     <dependencies>
