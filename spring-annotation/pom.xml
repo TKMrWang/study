@@ -19,6 +19,8 @@
         <module>lab-8-value</module>
         <module>lab-9-automatic-assembly</module>
         <module>lab-10-profile</module>
+        <module>lab-11-aop</module>
+        <module>lab-12-tx</module>
     </modules>
 
     <dependencies>
@@ -34,5 +36,13 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.2.8.RELEASE</version>
+        </dependency>
+
+
     </dependencies>
 </project>
