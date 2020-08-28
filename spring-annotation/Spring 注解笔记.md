@@ -86,6 +86,73 @@
 
    
 
-9. 
-
-​	
+9. @Value注解，读取配置文件为Bean属性初始化赋值，支持如下三种形式：
+        1）@Value("张三")：基本数值
+        2）@Value("#{22-2}"):#{}表达式
+        3)@Value("${}"):${}取出配置文件中的值
+    @PropertySource(value="",encoding="utf-8")指定配置文件的位置和编码
+    示例见：lab-8
+10. 自动注入：
+    一、@Autowired 自动装配
+    1）@Autowired 自动装配，默认首先按照类型进行自动匹配Bean，如果容器中存在相同类型的Bean，再根据id属性进行匹配
+        如果希望被@Autowired标记的Bean不是必须的，可以使用required=false标记
+       
+        @Repository
+        public class UserDao {
+            
+        }    
+                
+        @Service
+        public class UserService {
+        
+            @Autowired
+            private UserDao userDao;
+        
+            public void print(){
+                System.out.println(userDao);
+            }
+        }
+    2）@Qualifier(id)：当有多个相同类型的Beans时，采用@Qualifier(id)与@Autowired配合使用明确需要使用的Bean
+    ```
+    public interface UserService {
+        
+    }
+    ```
+    然后写两个实现类：
+    ```
+    @Service
+    public class UserServiceImpl implements UserService {
+       
+    }
+    @Service
+    public class MyUserServiceImpl implements UserService {
+       
+    }
+    ```
+    然后在Controller调用
+    ```
+    @Controller   
+    public class UserController {
+        @Autowired
+        private UserService userService;
+    
+    }
+    ```
+    当我们启动程序时，程序会报错，Spring容器中有两个UserService的实现类，不知道该使用哪个，
+    这时我们就需要使用@Qualifier明确指出使用哪个
+    
+    ``` 
+     @Controller   
+        public class UserController {
+            @Autowired
+            @Qualifier("userServiceImpl")
+            private UserService userService;
+        }
+    ```
+    3）@Primary:当一个接口有多个实现类时，@Autowired会默认注入由@Primary修饰的Bean
+        示例见：lab-9
+    当@Qualifier与@Primary共同修饰时，使用@Qualifier指定的Bean
+    二：@Resource和@Inject自动注入(java规范的注解)
+    @Resource 默认按照组件名称进行装配的
+    @Inject 功能与@Autowired一样，需要导入javax.inject包以后才能使用
+    @Autowired 可以放在构造器、方法、参数、属性，@Autowired标注的都是从容器中获取参数组件的值
