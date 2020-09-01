@@ -1,0 +1,9 @@
+2020-08-31 23:02:30.146  INFO 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : Starting SpringBootLoggingApplicationTests on DESKTOP-8ATNFVF with PID 18668 (started by wang in E:\学习\代码\后端\study\spring-boot\spring-boot-logging)
+2020-08-31 23:02:30.149 DEBUG 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-08-31 23:02:30.150  INFO 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : No active profile set, falling back to default profiles: default
+2020-08-31 23:02:30.709  INFO 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : Started SpringBootLoggingApplicationTests in 0.995 seconds (JVM running for 2.236)
+2020-08-31 23:02:30.941 TRACE 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : 这是trace日志
+2020-08-31 23:02:30.941 DEBUG 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : 这时debug日志
+2020-08-31 23:02:30.942  INFO 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : 这时info日志
+2020-08-31 23:02:30.942  WARN 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : 这是warn日志
+2020-08-31 23:02:30.942 ERROR 18668 --- [main] c.i.w.SpringBootLoggingApplicationTests  : 这是error日志
